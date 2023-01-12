@@ -1,4 +1,4 @@
-import Reply from "./Reply";
+import Replys from "./Replys";
 
 const ReplyContainer = ({
   commentData,
@@ -11,7 +11,7 @@ const ReplyContainer = ({
   return (
     <div className="reply-container">
       {commentData.map((data) => (
-        <Reply
+        <Replys
           key={data.id}
           commentData={data}
           updateScore={updateScore}

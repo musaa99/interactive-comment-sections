@@ -6,7 +6,7 @@ import AddComment from "./AddComment";
 import ReplyContainer from "./ReplyContainer";
 import DeleteModal from "./DeleteModal";
 
-import { CommentHeader, CommentFooter, CommentVotes } from "./commentParts";
+import { Header, Footer, Votes } from "./commentSection";
 
 const Comment = ({
   commentData,
@@ -46,13 +46,13 @@ const Comment = ({
       }`}
     >
       <div className="comment">
-        <CommentVotes
+        <Votes
           updateScore={updateScore}
           commentData={commentData}
           type="comment"
         />
         <div className="comment--body">
-          <CommentHeader
+          <Header
             commentData={commentData}
             replying={replying}
             setReplying={setReplying}
@@ -77,7 +77,7 @@ const Comment = ({
             </button>
           )}
         </div>
-        <CommentFooter
+        <Footer
           updateScore={updateScore}
           commentData={commentData}
           setReplying={setReplying}

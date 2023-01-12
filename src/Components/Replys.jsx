@@ -5,9 +5,9 @@ import "./Styles/Comment.scss";
 import AddComment from "./AddComment";
 import DeleteModal from "./DeleteModal";
 
-import { CommentHeader, CommentFooter, CommentVotes } from "./commentParts";
+import { Header, Footer, Votes } from "./commentSection";
 
-const Reply = ({
+const Replys = ({
   commentData,
   updateScore,
   addNewReply,
@@ -64,13 +64,13 @@ const Reply = ({
       }`}
     >
       <div className="comment">
-        <CommentVotes
+        <Votes
           updateScore={updateScore}
           commentData={commentData}
           type="reply"
         />
         <div className="comment--body">
-          <CommentHeader
+          <Header
             commentData={commentData}
             setReplying={setReplying}
             setDeleting={setDeleting}
@@ -85,7 +85,7 @@ const Reply = ({
             </button>
           )}
         </div>
-        <CommentFooter
+        <Footer
           updateScore={updateScore}
           commentData={commentData}
           setReplying={setReplying}
@@ -104,7 +104,7 @@ const Reply = ({
         />
       )}
       {commentData.replies.map((reply) => (
-        <Reply key={reply.id} commentData={reply} addReply={addReply} />
+        <Replys key={reply.id} commentData={reply} addReply={addReply} />
       ))}
 
       {deleting && (
@@ -118,4 +118,4 @@ const Reply = ({
   );
 };
 
-export default Reply;
+export default Replys;
